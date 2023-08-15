@@ -25,6 +25,6 @@ add_library(goo_objs OBJECT
 set_property(TARGET goo_objs
              PROPERTY POSITION_INDEPENDENT_CODE True)
 
-add_library(goo
+add_library(goo STATIC
   $<TARGET_OBJECTS:goo_objs>
 )

@@ -47,11 +47,13 @@ file(GLOB_RECURSE XPDF_SOURCES
 #             PROPERTY POSITION_INDEPENDENT_CODE True)
 
 #--- xpdf library
-add_library(${PROJECT_NAME} STATIC ${XPDF_SOURCES})
+add_library(${PROJECT_NAME} STATIC ${XPDF_SOURCES}
+        $<TARGET_OBJECTS:fofi>
+        $<TARGET_OBJECTS:goo>
+)
 
 set_property(TARGET ${PROJECT_NAME} PROPERTY FOLDER "parsing")
 
-message(STATUS "PROJECT_BINARY_DIR: ${PROJECT_BINARY_DIR}")
 target_include_directories(${PROJECT_NAME}
     PUBLIC
         .
@@ -62,7 +64,7 @@ target_include_directories(${PROJECT_NAME}
         ${COMMON_CMAKE_SOURCE_DIR}/3rdParty/xpdf/splash
 )
 
-target_link_libraries(${PROJECT_NAME} PUBLIC fofi goo)
+#target_link_libraries(${PROJECT_NAME} PRIVATE fofi goo)
 #--- object files needed by XpdfWidget
 
 #if ((QT4_FOUND OR Qt5Widgets_FOUND OR Qt6Widgets_FOUND)
