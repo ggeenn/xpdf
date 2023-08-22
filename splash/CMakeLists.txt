@@ -13,7 +13,7 @@ if (HAVE_SPLASH)
   include_directories("${PROJECT_BINARY_DIR}")
   include_directories("${PROJECT_SOURCE_DIR}/goo")
   include_directories("${PROJECT_SOURCE_DIR}/fofi")
-  include_directories("${FREETYPE_INCLUDE_DIRS}")
+  include_directories($<TARGET_PROPERTY:FreeType::FreeType,INTERFACE_INCLUDE_DIRECTORIES>)
 
   if (HAVE_DTYPE4_H)
     include_directories("${DTYPE_INCLUDE_DIR}")

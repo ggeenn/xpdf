@@ -33,8 +33,12 @@ file(GLOB_RECURSE XPDF_SOURCES
     ${COLOR_MANAGER_SOURCE}
     "*.cc"
 )
+list(FILTER XPDF_SOURCES EXCLUDE REGEX 
+  "(HTMLGen)|(ShadingImage)|(SplashOutputDev)|(TextOutputDev)|(WebFont)|(pdftohtml)|(pdftopng)"
+)
 
-#message(STATUS "XPDF_SOURCES: ${XPDF_SOURCES}")
+
+# message(STATUS "XPDF_SOURCES: ${XPDF_SOURCES}")
 #
 #add_library(xpdf_objs OBJECT "${XPDF_SOURCES}")
 #
