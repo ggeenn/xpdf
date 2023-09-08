@@ -28,3 +28,5 @@ set_property(TARGET goo_objs
 add_library(goo STATIC
   $<TARGET_OBJECTS:goo_objs>
 )
+set_property(TARGET goo_objs PROPERTY FOLDER "parsing/objs")
+set_property(TARGET goo PROPERTY FOLDER "parsing/objs")

@@ -26,3 +26,5 @@ set_property(TARGET fofi_objs
 add_library(fofi
   $<TARGET_OBJECTS:fofi_objs>
 )
+set_property(TARGET fofi_objs PROPERTY FOLDER "parsing/objs")
+set_property(TARGET fofi PROPERTY FOLDER "parsing/objs")
